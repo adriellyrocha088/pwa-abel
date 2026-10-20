@@ -1,1 +1,28 @@
-# pwa-abel
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWA Abel</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003366">
+</head>
+<body>
+  <header>
+    <h1>Institucional Abel</h1>
+  </header>
+  <main>
+    <p>Conteúdo da disciplina / Página institucional.</p>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker registado!', reg))
+          .catch(err => console.error('Erro no Service Worker:', err));
+      });
+    }
+  </script>
+</body>
+</html>
